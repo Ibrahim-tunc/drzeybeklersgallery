@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=WindSong&display=swap');
+
+
+
+/* Base */
+
+:root{
+    --font-color:#093240;
+}
+    
+
+.base{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.base a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--font-color);
+    padding-top: .5rem;
+}
+#gallery{
+        color:var(--font-color);
+        background: #029ccc;               
+        border: 1px white solid;
+}
+#gallery:hover{
+    color:rgb(4, 43, 74 );
+    background-color:rgb(251, 253, 255);
+}
+
+.base_show{
+    text-align: center;
+}
+
+    .button {
+    display: flex;
+    position: relative;
+    padding: .7rem 1.4rem;
+    margin: 1rem auto;
+    border: 1px white solid;
+    border-radius: .4rem;
+    
+    color:rgb(4, 43, 74 );
+    background-color:rgb(251, 253, 255);
+    
+    font-size: 1.2rem;
+    font-weight: 500;
+    box-shadow: 0px 0px 5px rgb(55, 115, 175);
+
+}
+
+    .button:hover{
+        color:white;
+        background-color:var(--font-color);
+    }
+
+    .homebutton{
+        color:var(--font-color);
+
+        background: #029ccc;
+               
+        border: 1px white solid;
+
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: .7rem 1.4rem;
+        border-radius:.4rem
+    }
+    #homeG{
+        background:#035e86;
+        color:white;
+        border: 1px #029ccc solid;
+    }
+
+    #homeG:hover{
+        color:var(--font-color);
+        background: #029ccc;              
+        border: 1px white solid;
+    }
+
+    .homebutton:hover{
+        background:#035e86;
+        color:white;
+        border: 1px #029ccc solid;
+    }
+    
+    #ok{
+        color:rgb(4, 43, 74 );
+        background-color:rgb(251, 253, 255);
+        
+    }
+    #ok:hover{
+        color:white;
+        background-color:var(--font-color);
+    }
+
+    
+
+
+ .base_img{
+    width: 100%;
+    height: auto;
+}
+
+
+.base li {
+    position: absolute;
+    height: 0vh;
+    overflow: hidden;
+    background-color: rgb(4, 43, 74 );
+}
+
+/* Base İnfo */
+
+#base_info{
+    margin: .57rem;
+    font-style: italic;
+    font-size: 1.1rem;
+    font-weight:500;
+    color: var(--font-color);
+    
+}
+
+
+.base_info{
+    position: fixed;
+    width: 100%;
+        top: -200%;
+    height: 100vh;
+    padding: 1rem;
+    left: 0;    
+    z-index: 101; 
+    overflow: scroll;
+    background-color: rgb(251, 253, 255  );
+    transition: .7s;
+    color: var(--font-color);
+    font-size: 1rem;
+    letter-spacing: .03rem;
+    font-style: initial;
+}
+
+.show{
+    top: 0;
+}
+
+.base_info li {
+    margin-top: 2rem;
+}
+
+.box_close{
+    font-size: 2rem;
+    cursor: pointer;
+    float: right;
+}
+
+
+
+
+
+
+/* Posts */
+
+
+.posts{
+    border-bottom: .05rem dotted rgb(52, 120, 173 );
+    margin-bottom: 3rem;
+}
+
+.posts img{
+    border-radius: 1rem;
+    width: 98%;
+    height: auto;
+    margin: 0 1% 5% 1%;
+}
+
+
+#post_title{
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #231942;
+    padding: 0 1rem;
+}
+
+#post_info{
+    font-size: 1.1rem;
+    color:#231942;
+    padding: 0 1rem 1rem 1rem;
+}
+
+
+.pp{
+    position: relative;
+    display: flex;
+}
+
+.pp #pp{
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+}
+
+.pp #pp_p{
+    position: absolute;
+    font-family: 'WindSong', cursive;
+    font-size: 1rem;
+    bottom: 10%;
+    left: 25% ;
+}
+
+
+
+/*  for pc */
+
+
+  @media screen and (min-width: 768px) {
+    
+    #carouselExampleDark{
+       max-height: 500px;
+       overflow: hidden;
+    }
+
+    #homeroot{
+        display:grid;
+        grid-template-columns: 7fr 2fr;
+        align-items: center;        
+    }
+    .buttons{
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+  }  

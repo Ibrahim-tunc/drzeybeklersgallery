@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dr Zeybekler Gallery</title>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="menu/menu.css">
+    <link rel="stylesheet" href="style.css">
+<style>
+    body{
+        background-color: rgb(251, 253, 255 );
+        font-size: 100%;
+        font-family: 'Hind', sans-serif;
+    }
+</style>
+
+</head>
+<body>
+
+    
+
+    <div id="menu_root">
+        <header class="header">
+            <a href="" class="header__logo">Dr Zeybekler Gallery</a>
+    
+            <div class="header__toggle"> 
+                <i class='bx bx-menu-alt-right' id="header-toggle"></i>
+            </div>
+    
+             <nav class="nav">
+                <div class="nav__content bd-grid">
+                    <a href="#" class="nav__perfil">
+                        <div class="nav__img">
+                            <img src="menu/profile.png" alt="">
+                        </div>
+                        <div>
+                            <span class="nav__name">Tolunay</span>
+                            <span class="nav__name">Zeybekler</span>
+                        </div>
+                    </a>
+    
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+                            <!--Home-->
+                            <li class="nav__item" id="home"><a href="#" class="nav__link">Ana Sayfa</a></li>
+                            
+                            <!--portfölyo-->
+                            <li class="nav__item" id="portfolyo"><a href="#" class="nav__link">Portfolyo</a></li>
+                                
+                            <!-- Filler -->                        
+                            <li class="nav__item dropdown">
+                                <a href="#" class="nav__link dropdown_link ">Dolgu <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                            
+                                <ul class="dropdown__menu">
+                                    <li class="dropdown__item events" id="lip"><a href="#" class="nav__link">Dudak Dolgusu</a></li>
+                                    <li class="dropdown__item events" id="fillerZ"><a href="#" class="nav__link">Burun Dolgusu</a></li>
+                                    <li class="dropdown__item events" id="under_eye"><a href="#" class="nav__link">Göz Altı Işık Dolgusu</a></li>
+                                    <li class="dropdown__item events" id="nazolabial"><a href="#" class="nav__link">Nazolabial</a></li>
+                                    <li class="dropdown__item events" id="jaw"><a href="#" class="nav__link">Çene ve Çene Hattı Dolgusu</a></li>
+                                    <li class="dropdown__item events" id="forehead"><a href="#" class="nav__link">Alın Dolgusu</a></li> 
+                                </ul>
+                            </li>
+    
+                            <!-- Filler -->
+    
+                            <!-- Botox -->
+    
+                            <li class="nav__item dropdown">
+                                <a href="#" class="nav__link dropdown_link "> Botox<i class='bx bx-chevron-down dropdown__icon'></i></a>
+                            
+                                <ul class="dropdown__menu ">
+                                    <li class="dropdown__item events" id="neckBtx"><a href="#" class="nav__link">Boyun ve Dekolte Botoxu</a></li>
+                                    <li class="dropdown__item events" id="eye_circle"><a href="#" class="nav__link">Göz Çevresi Botoxu</a></li>
+                                    <li class="dropdown__item events" id="eyebrow"><a href="#" class="nav__link">Kaş Çatma Botox</a></li>
+                                    <li class="dropdown__item events" ><a href="#" class="nav__link">Kaş Kaldırma Botoxu</a></li>
+                                    <li class="dropdown__item events" id="handBtx"><a href="#" class="nav__link">El Gençleştirme Botoxu</a></li>
+                                </ul>
+                            </li>
+    
+    
+                            <!-- Botox -->
+            
+                            <!-- Meshoteraphy -->                        
+                            <li class="nav__item dropdown">
+                                <a href="#" class="nav__link dropdown_link ">Mezoterapi <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                            
+                                <ul class="dropdown__menu">
+                                    <li class="dropdown__item events" id="Iksir-715"><a href="#" class="nav__link">cilt Mezoterapisi (iksir-715)</a></li>
+                                    <li class="dropdown__item events" id="hair_meso"><a href="#" class="nav__link">Saç Mezoterapisi</a></li>
+                                </ul>
+                            </li>
+    
+                            <!-- Meshoteraphy --> 
+    
+                            <li class="nav__item events" id="all_face" ><a href="#" class="nav__link">Tüm Yüz Gençleştirme</a></li>
+    
+                            <!-- technological treatments  -->                        
+                          <!--  <li class="nav__item dropdown">
+                                <a href="#" class="nav__link dropdown_link ">Teknolojik Uygulamalar  <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                            
+                                <ul class="dropdown__menu">
+                                    <li class="dropdown__item"><a href="#" class="nav__link">Fransız Askısı</a></li>
+                                    <li class="dropdown__item"><a href="#" class="nav__link">Örümcek Ağı Estetiği</a></li>
+                                    <li class="dropdown__item"><a href="#" class="nav__link">Glutatyon Tedavisi</a></li>
+                                </ul>
+                            </li> -->
+                            <!-- technological treatments -->  
+
+                            <!-- Educations -->
+
+                           <!-- <li class="nav__item dropdown">
+                                <a href="#" class="nav__link dropdown_link "> Eğitimiler <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                            
+                                <ul class="dropdown__menu">
+                                    <li class="dropdown__item"><a href="#" class="nav__link">Başlangıç Dolgu Eğitimi</a></li>
+                                    <li class="dropdown__item"><a href="#" class="nav__link">Spesifik dolgu eğitimi</a></li>                                    
+                                    <li class="dropdown__item"><a href="#" class="nav__link"></a>Botox Eğitimi</li>
+                                </ul>
+                            </li> -->
+
+                            <!--Educations -->
+
+
+
+
+                        </ul>
+                    </div>
+    
+                </div>
+            </nav>
+    
+    
+        </header>
+    </div>
+
+    <div id="root">
+
+    <div id="homeroot">
+    <!-- Slider  -->
+    <!-- Slider  -->
+
+    
+      
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img src="https://firebasestorage.googleapis.com/v0/b/drzeybeklersgallery.appspot.com/o/slider%2F1.jpg?alt=media&token=dbc0a230-ea7d-4cb1-83f3-e981cd69c2a1" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://firebasestorage.googleapis.com/v0/b/drzeybeklersgallery.appspot.com/o/slider%2F2.jpg?alt=media&token=6d99f271-b4c8-4084-a581-f240c348e013" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://firebasestorage.googleapis.com/v0/b/drzeybeklersgallery.appspot.com/o/slider%2F3.jpg?alt=media&token=352abb50-0537-44b3-8fa2-0df0f49ae6f7" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://firebasestorage.googleapis.com/v0/b/drzeybeklersgallery.appspot.com/o/slider%2F4.jpg?alt=media&token=1cad88b5-389a-4971-a6c3-eed9ab39dc8c" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://firebasestorage.googleapis.com/v0/b/drzeybeklersgallery.appspot.com/o/slider%2F5.jpg?alt=media&token=cbf64e09-1339-4663-a3ba-9d9f117348a6" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://firebasestorage.googleapis.com/v0/b/drzeybeklersgallery.appspot.com/o/slider%2F6.jpg?alt=media&token=3d6ffde0-8172-4995-906d-d339fc387188" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+    <!-- Slider  -->
+    <!-- Slider  -->
+
+      <!-- Home Buttons -->
+      <div class="buttons">
+      <button class="button homebutton"> Modern Uygulamalar.. </button>
+      <button class="button homebutton"> Portfolyo </button>
+      <button class="button homebutton" id="homeG"> Galeriyi Keşfet !</button>
+      </div>
+      
+
+      <!-- Home Buttons -->
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<script>
+ var firebaseConfig = {
+    apiKey: "AIzaSyDOKUylf2piNg5O1uYKLYbzGIiYzU5KKlo",
+    authDomain: "drzeybeklersgallery.firebaseapp.com",
+    projectId: "drzeybeklersgallery",
+    storageBucket: "drzeybeklersgallery.appspot.com",
+    messagingSenderId: "897241086076",
+    appId: "1:897241086076:web:0e354ca8869dd1652cf1f9",
+    measurementId: "G-C4C9JJSMGS"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  const db = firebase.firestore()
+  db.settings({ timestampsInSnapshots: true })
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+    <script src="menu/menu.js"></script>
+    <script src="baseInfo.js"></script>
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.9.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+</body>
+
+</html>
